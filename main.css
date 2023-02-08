@@ -13,6 +13,18 @@
   --primary-color: #747474;
 }
 
+[font-theme=Sans-serif] {
+  --font-family: "Amaranth", sans-serif;
+}
+
+[font-theme=Serif] {
+  --font-family: "Lora", serif;
+}
+
+[font-theme=Display] {
+  --font-family: "Lobster Two", cursive;
+}
+
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -23,7 +35,7 @@ body {
   min-height: 100vh;
   background: var(--background-color);
   display: flex;
-  font-family: "Amaranth", sans-serif;
+  font-family: var(--font-family);
   font-size: 0.75rem;
 }
 
@@ -41,7 +53,7 @@ body {
 }
 
 nav {
-  font-family: "Amaranth", sans-serif;
+  font-family: var(--font-family);
   color: var(--font-color);
   font-size: 1rem;
   letter-spacing: 3px;

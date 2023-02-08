@@ -40,7 +40,6 @@ if (currentTheme) {
   }
 }
 
-
 // Display the dropdown options
 select.addEventListener("click", () => {
   caret.classList.toggle("fa-angle-up");
@@ -48,11 +47,22 @@ select.addEventListener("click", () => {
   menu.classList.toggle("menu-open");
 });
 
+// Switch Font Dynamically
+function changeFont(name) {
+  if (name) {
+    document.documentElement.setAttribute("font-theme", name);
+    localStorage.setItem("font", name);
+    return;
+  }
+}
+
 // Select font
 options.forEach((option) => {
   option.addEventListener("click", () => {
     selected.innerText = option.innerText;
-    // console.log( option.innerText)
+    changeFont(option.innerText);
+
+    // handle the dropdown options
     select.classList.remove("select-clicked");
     caret.classList.replace("fa-angle-up", "fa-angle-down");
     menu.classList.remove("menu-open");
@@ -65,5 +75,16 @@ options.forEach((option) => {
   });
 });
 
+// Check local storage for font
+const currentFont = localStorage.getItem("font");
+
+if (currentFont) {
+  document.documentElement.setAttribute("font-theme", currentFont);
+
+  if (currentFont) {
+    selected.innerText = currentFont
+    changeFont(currentFont)
+  }
+}
 
 
