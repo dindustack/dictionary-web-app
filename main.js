@@ -56,6 +56,7 @@ function changeFont(name) {
   }
 }
 
+
 // Select font
 options.forEach((option) => {
   option.addEventListener("click", () => {
@@ -75,16 +76,23 @@ options.forEach((option) => {
   });
 });
 
+
 // Check local storage for font
 const currentFont = localStorage.getItem("font");
-
 if (currentFont) {
   document.documentElement.setAttribute("font-theme", currentFont);
 
   if (currentFont) {
-    selected.innerText = currentFont
-    changeFont(currentFont)
+    selected.innerText = currentFont;
+    changeFont(currentFont);
+
+    options.forEach((option) => {
+      option.classList.remove("active");
+
+      if (option.innerText === currentFont) {
+        option.classList.add("active");
+      }
+    });
+
   }
 }
-
-
