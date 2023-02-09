@@ -8,6 +8,7 @@ const options = document.querySelectorAll(".dropdown-content li");
 const selected = document.querySelector(".toggle-text");
 
 function toggleDarkLightMode(isDark) {
+  
   isDark
     ? toggleIcon.children[0].classList.replace("fa-sun", "fa-moon")
     : toggleIcon.children[0].classList.replace("fa-moon", "fa-sun");

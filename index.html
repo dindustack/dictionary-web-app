@@ -15,38 +15,46 @@
     <!-- Dark Mode Switch -->
     <div class="app">
       <div class="top-app">
-      <!-- Navigation -->
+        <!-- Navigation -->
 
-      <nav id="navigation">
-        <h2>Dictionaety</h2>
-      </nav>
+        <nav id="navigation">
+          <h2>Dictionaety</h2>
+        </nav>
 
-      <div class="theme-switch-wrapper">
-        <div class="dropdown">
-          <div class="dropdown-select">
-            <span class="toggle-text">Serif</span>
-            <i class="fas fa-angle-down"></i>
+        <div class="theme-switch-wrapper">
+          <div class="dropdown">
+            <div class="dropdown-select">
+              <span class="toggle-text">Serif</span>
+              <i class="fa-solid fa-angle-down"></i>
+            </div>
+            <ul class="dropdown-content">
+              <li class="active">Serif</li>
+              <li>Sans-serif</li>
+              <li>Display</li>
+            </ul>
           </div>
-          <ul class="dropdown-content">
-            <li class="active">Serif</li>
-            <li>Sans-serif</li>
-            <li>Display</li>
-          </ul>
+          <span id="toggle-icon">
+            <i class="fas fa-sun"></i>
+          </span>
+          <label class="theme-switch">
+            <input type="checkbox" />
+            <div class="slider round"></div>
+          </label>
         </div>
-        <span id="toggle-icon">
-          <i class="fas fa-sun"></i>
-        </span>
-        <label class="theme-switch">
-          <input type="checkbox" />
-          <div class="slider round"></div>
-        </label>
       </div>
 
-    </div>
+      <!-- Input field -->
+      <div class="input-group">
+        <input
+          class="form-control"
+          type="text"
+          placeholder="Search for a word..."
+        />
 
-    <!-- Input field -->
-    
-      
+        <span class="search-icon">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </span>
+      </div>
     </div>
     <!-- Script -->
     <script src="main.js"></script>
