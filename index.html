@@ -18,7 +18,9 @@
         <!-- Navigation -->
 
         <nav id="navigation">
-          <h2>Dictionaety</h2>
+          <span class="logo">
+            <i class="fas fa-book"></i>
+        </span>
         </nav>
 
         <div class="theme-switch-wrapper">
@@ -44,19 +46,30 @@
       </div>
 
       <!-- Input field -->
-      <div class="input-group">
+      <form class="input-group" id="form">
         <input
           class="form-control"
           type="text"
           placeholder="Search for a word..."
+          id="search"
         />
 
         <span class="search-icon">
           <i class="fa-solid fa-magnifying-glass"></i>
         </span>
+      </form>
+
+      <!-- Word Transcription and Audio -->
+      <div class="search-display" id="display">
+        <audio src=""></audio>
       </div>
     </div>
     <!-- Script -->
-    <script src="main.js"></script>
+
+    <!-- Theme -->
+    <script src="/js/theme.js"></script>
+
+    <!-- Word Search, display and audio -->
+    <script src="/js/search.js"></script>
   </body>
 </html>

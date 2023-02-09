@@ -14,7 +14,7 @@
   --font-color: #f7f7f7;
   --primary-color: #747474;
   --on-hover: #a145e8;
-  --input-color: #202020 ;
+  --input-color: #202020;
 }
 
 [font-theme=Sans-serif] {
@@ -55,13 +55,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 1rem;
 }
 
 nav {
   color: var(--font-color);
   font-size: 1rem;
   letter-spacing: 3px;
-  padding: 1.563rem 0;
+  padding: 1.563rem 0 0;
 }
 
 /* Dark Mode Toggle */
@@ -207,8 +208,16 @@ input:checked + .slider::before {
 }
 
 .fa-solid {
-  font-size: 15px !important;
+  font-size: 0.9375rem !important;
   color: #a77dc9 !important;
+}
+
+.fa-play {
+  font-size: 1.563rem;
+}
+
+.fa-book {
+  color: #a77dc9;
 }
 
 .input-group {
@@ -252,4 +261,39 @@ input:checked + .slider::before {
   padding: 12px 20px;
   text-align: center;
   white-space: nowrap;
+}
+
+.search-display {
+  display: flex;
+  flex-direction: column;
+}
+
+.word-trans {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.word-trans .transcription {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.word-trans .audio {
+  background: #e9d1fd;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+}
+.word-trans .trans-word {
+  font-size: 2.5rem;
+  color: var(--font-color);
+  margin: 0;
+  text-transform: capitalize;
+}
+.word-trans .phonetics {
+  color: #a77dc9;
+  font-size: 1.2rem;
 }/*# sourceMappingURL=main.css.map */
