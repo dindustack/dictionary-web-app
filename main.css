@@ -296,4 +296,44 @@ input:checked + .slider::before {
 .word-trans .phonetics {
   color: #a77dc9;
   font-size: 1.2rem;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  margin: auto;
+  border: 3px solid var(--font-color);
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  animation: rotation 1s linear infinite;
+}
+.loader:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #a145e8;
+  width: 16px;
+  height: 16px;
+  transform: translate(-50%, 50%);
+  border-radius: 50%;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.card {
+  max-width: 800px;
+  background-color: #4c2885;
+  border-radius: 20px;
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 40px rgba(0, 0, 0, 0.1);
+  display: flex;
+  padding: 3rem;
+  margin: 0 1.5rem;
 }/*# sourceMappingURL=main.css.map */

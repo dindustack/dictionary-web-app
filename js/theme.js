@@ -2,7 +2,7 @@ const toggleSwitch = document.querySelector('input[type="checkbox"]');
 const toggleIcon = document.getElementById("toggle-icon");
 const dropdown = document.querySelector(".dropdown");
 const select = document.querySelector(".dropdown-select");
-const caret = document.querySelector(".fas");
+const caret = document.querySelector(".fa-angle-down");
 const menu = document.querySelector(".dropdown-content");
 const options = document.querySelectorAll(".dropdown-content li");
 const selected = document.querySelector(".toggle-text");
