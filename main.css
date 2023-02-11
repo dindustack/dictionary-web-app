@@ -304,7 +304,6 @@ input:checked + .slider::before {
   margin: auto;
   border: 3px solid var(--font-color);
   border-radius: 50%;
-  display: inline-block;
   position: relative;
   animation: rotation 1s linear infinite;
 }

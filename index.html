@@ -20,7 +20,7 @@
         <nav id="navigation">
           <span class="logo">
             <i class="fas fa-book"></i>
-        </span>
+          </span>
         </nav>
 
         <div class="theme-switch-wrapper">
@@ -60,11 +60,23 @@
       </form>
 
       <!-- Word Transcription and Audio -->
-      <div class="search-display" id="display">
+      <div class="search-display">
+        <div class="word-trans">
+          <div class="transcription" id="display">
+            <!-- <h1 class="trans-word">${item[0].word}</h1>
+            <span class="phonetics">${item[0].phonetics[1].text}</span> -->
+          </div>     
+          <span class="audio" id="sound" hidden>
+            <i class="fa-solid fa-play" id="play"></i>
+          </span>
+          </div>
+        </div>
         <audio src=""></audio>
+      <div class="loader" id="loader" hidden></div>
+
       </div>
 
-      <div class="loader" id="loader"></div>
+
     </div>
     <!-- Script -->
 
