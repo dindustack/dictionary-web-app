@@ -281,7 +281,7 @@ input:checked + .slider::before {
 .word-trans .audio {
   background: #e9d1fd;
   border-radius: 50%;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   height: 50px;
@@ -305,6 +305,7 @@ input:checked + .slider::before {
   border: 3px solid var(--font-color);
   border-radius: 50%;
   position: relative;
+  z-index: 100;
   animation: rotation 1s linear infinite;
 }
 .loader:after {

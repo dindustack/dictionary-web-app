@@ -288,7 +288,7 @@ input:checked + .slider::before {
   .audio {
     background: #e9d1fd;
     border-radius: 50%;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     height: 50px;

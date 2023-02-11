@@ -11,13 +11,15 @@ const playButton = document.getElementById("play");
 function showLoadingSpinner() {
   loader.hidden = false;
   searchDisplaySection.hidden = true;
-  wordPlay.hidden = true;
+  wordPlay.style.display = "none"
 }
 
 function removeLoadingSpinner() {
   if (!loader.hidden) {
     searchDisplaySection.hidden = false;
     loader.hidden = true;
+  wordPlay.style.display = "flex"
+
   }
 }
 
@@ -27,19 +29,18 @@ async function fetchWord(word) {
     const response = await fetch(APIURL + word);
     const data = await response.json();
 
-    console.log("data", data[0].phonetics[1].audio);
     createSearchDisplay(data);
     loadWordPronunciation(data[0].phonetics[1].audio);
     removeLoadingSpinner();
   } catch (error) {
     removeLoadingSpinner();
+    console.error(error)
     createErrorCard(data.message);
   }
 }
 
 // Play Word Pronunciation
 function playWord() {
-  // playButton.classList.replace("fa-play", "fa-pause");
   pronunciation.play();
 }
 
@@ -51,7 +52,7 @@ function createSearchDisplay(item) {
   const searchDisplayHTML = ` 
   <div>
   <h1 class="trans-word">${item[0].word}</h1>
-  <span class="phonetics">${item[0].phonetics[1].text}</span>
+  <span class="phonetics">${item[0]?.phonetics[1].text}</span>
   </div>
     `;
   searchDisplaySection.innerHTML = searchDisplayHTML;
@@ -81,6 +82,5 @@ form.addEventListener("submit", (event) => {
 });
 
 playButton.addEventListener("click", () => {
-  console.log("care");
   playWord();
 });
