@@ -84,3 +84,5 @@ form.addEventListener("submit", (event) => {
 playButton.addEventListener("click", () => {
   playWord();
 });
+
+// the api isn't working
