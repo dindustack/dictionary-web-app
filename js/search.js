@@ -7,7 +7,9 @@ const search = document.getElementById("search");
 const wordPlay = document.getElementById("sound");
 const pronunciation = document.querySelector("audio");
 const playButton = document.getElementById("play");
-const partsOfSpeech = document.getElementById("noun");
+const nounSection = document.getElementById("noun");
+const verbSection = document.getElementById("verb");
+const sourceSection = document.getElementById("source");
 
 function showLoadingSpinner() {
   loader.hidden = false;
@@ -28,10 +30,10 @@ async function fetchWord(word) {
   try {
     const response = await fetch(APIURL + word);
     const data = await response.json();
-    console.log(data);
 
     createSearchDisplay(data);
     createPartsOfSpeech(data);
+    createSourceSection(data);
     loadWordPronunciation(data[0].phonetics[1].audio);
     removeLoadingSpinner();
   } catch (error) {
@@ -61,32 +63,58 @@ function createSearchDisplay(item) {
 }
 
 function createPartsOfSpeech(item) {
-  const nounHTML = ` 
-  <div class="separator">${item[0].meanings[0].partOfSpeech}</div>
-  <span class="meaning">Meaning</span>
-  
-   
-  <ul>${item[0]?.meanings[0].definitions[0].map(function (definition, index) {
-    return <li>{definition[index]}</li>;
-  })}}
+  // definition lists for noun
+  const nounDefinition = item[0]?.meanings[0].definitions.map(
+    ({ definition }) => {
+      return `<ul>
+        <li>${definition}</li>   
+    </ul>`;
+    }
+  );
 
-  <div class="synonym-text">
-    <span class="meaning">Synonyms</span>
-    <span class="synonym">electronic keyboard</span>
-  </div>
-   
-    `;
-  partsOfSpeech.innerHTML = nounHTML;
+  // definition lists for verb
+  const verbDefinition = item[0]?.meanings[1].definitions.map(
+    ({ definition }) => {
+      return `<ul>
+        <li>${definition}</li>   
+    </ul>`;
+    }
+  );
+
+  // Noun section
+  const nounHTML = ` 
+    <div class="separator">${item[0].meanings[0].partOfSpeech}</div>
+    <span class="meaning">Meaning</span>
+    
+    ${nounDefinition}
+
+    <div class="synonym-text">
+      <span class="meaning">Synonyms</span>
+      <span class="synonym">${item[0].meanings[0].synonyms}</span>
+    </div> 
+  `;
+
+  // Verb section
+  const verbHTML = ` 
+    <div class="separator">${item[0].meanings[1].partOfSpeech}</div>
+    <span class="meaning">Meaning</span>
+    
+    ${verbDefinition}
+  `;
+  nounSection.innerHTML = nounHTML;
+  verbSection.innerHTML = verbHTML;
 }
 
-app.innerHTML =
-  "<ul>" +
-  wizards
-    .map(function (wizard) {
-      return "<li>" + wizard + "</li>";
-    })
-    .join("") +
-  "</ul>";
+function createSourceSection(item) {
+  const sourceHTML = ` 
+    <div class="separator"></div>
+    <div class="source-text">
+      <span class="meaning">Source</span>
+      <a href=${item[0].sourceUrls[0]} class="source-link">${item[0].sourceUrls[0]}</a>
+    </div>
+    `;
+  sourceSection.innerHTML = sourceHTML; 
+}
 
 function createErrorMessage(message) {
   const sectionHTML = `
@@ -114,5 +142,3 @@ form.addEventListener("submit", (event) => {
 playButton.addEventListener("click", () => {
   playWord();
 });
-
-// the api isn't working
