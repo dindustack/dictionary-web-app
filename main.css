@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Amaranth:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&display=swap");
@@ -276,7 +277,7 @@ input:checked + .slider::before {
 .word-trans .transcription {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 1rem;
 }
 .word-trans .audio {
   background: #e9d1fd;
@@ -288,10 +289,9 @@ input:checked + .slider::before {
   width: 50px;
 }
 .word-trans .trans-word {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   color: var(--font-color);
   margin: 0;
-  text-transform: capitalize;
 }
 .word-trans .phonetics {
   color: #a77dc9;
@@ -338,17 +338,53 @@ input:checked + .slider::before {
   margin: 0 1.5rem;
 }
 
+.noun-section {
+  margin-top: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
 .noun-section .separator {
   display: flex;
   align-items: center;
   text-align: center;
+  color: var(--font-color);
   font-size: 1.2rem;
+  font-weight: 700;
 }
 .noun-section .separator::after {
   content: "";
   flex: 1;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid var(--on-hover);
 }
 .noun-section .separator:not(:empty)::after {
-  margin-left: 0.25em;
+  margin-left: 2.25em;
+}
+.noun-section .meaning {
+  font-size: 1rem;
+  color: #757575;
+}
+.noun-section .synonym-text {
+  display: flex;
+  align-items: baseline;
+}
+.noun-section .synonym {
+  font-size: 1rem;
+  margin-left: 20px;
+  color: var(--primary-color);
+}
+.noun-section ul {
+  list-style: none;
+}
+.noun-section ul li {
+  color: var(--font-color);
+  font-size: 1.2rem;
+}
+.noun-section ul li::before {
+  content: "•";
+  color: var(--primary-color);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  font-size: 1.5rem;
 }/*# sourceMappingURL=main.css.map */

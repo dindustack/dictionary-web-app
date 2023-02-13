@@ -282,7 +282,7 @@ input:checked + .slider::before {
   .transcription {
     display: flex;
     flex-direction: column;
-    gap: 0.3rem;
+    gap: 1rem;
   }
 
   .audio {
@@ -296,10 +296,10 @@ input:checked + .slider::before {
   }
 
   .trans-word {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     color: var(--font-color);
     margin: 0;
-    text-transform: capitalize;
+    // text-transform: capitalize;
   }
 
   .phonetics {
@@ -351,21 +351,63 @@ input:checked + .slider::before {
 }
 
 .noun-section {
- 
+  margin-top: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
   .separator {
     display: flex;
     align-items: center;
     text-align: center;
+    color: var(--font-color);
     font-size: 1.2rem;
+    font-weight: 700;
   }
-  
+
   .separator::after {
-    content: '';
+    content: "";
     flex: 1;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid var(--on-hover);
   }
-  
+
   .separator:not(:empty)::after {
-    margin-left: .25em;
+    margin-left: 2.25em;
+  }
+
+  .meaning {
+    font-size: 1rem;
+    color: #757575;
+  }
+
+  .synonym-text {
+    display: flex;
+    align-items: baseline;
+  }
+
+  .synonym {
+    font-size: 1rem;
+    margin-left: 20px;
+    color: var(--primary-color);
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  ul li {
+    color: var(--font-color);
+    font-size: 1.2rem;
+
+  }
+
+  ul li::before {
+    content: "\2022";
+    color: var(--primary-color);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    font-size: 1.5rem;
+    // margin-left: -1em;
   }
 }

@@ -7,19 +7,19 @@ const search = document.getElementById("search");
 const wordPlay = document.getElementById("sound");
 const pronunciation = document.querySelector("audio");
 const playButton = document.getElementById("play");
+const partsOfSpeech = document.getElementById("noun");
 
 function showLoadingSpinner() {
   loader.hidden = false;
   searchDisplaySection.hidden = true;
-  wordPlay.style.display = "none"
+  wordPlay.style.display = "none";
 }
 
 function removeLoadingSpinner() {
   if (!loader.hidden) {
     searchDisplaySection.hidden = false;
     loader.hidden = true;
-  wordPlay.style.display = "flex"
-
+    wordPlay.style.display = "flex";
   }
 }
 
@@ -28,13 +28,15 @@ async function fetchWord(word) {
   try {
     const response = await fetch(APIURL + word);
     const data = await response.json();
+    console.log(data);
 
     createSearchDisplay(data);
+    createPartsOfSpeech(data);
     loadWordPronunciation(data[0].phonetics[1].audio);
     removeLoadingSpinner();
   } catch (error) {
     removeLoadingSpinner();
-    console.error(error)
+    console.error(error);
     createErrorCard(data.message);
   }
 }
@@ -57,6 +59,34 @@ function createSearchDisplay(item) {
     `;
   searchDisplaySection.innerHTML = searchDisplayHTML;
 }
+
+function createPartsOfSpeech(item) {
+  const nounHTML = ` 
+  <div class="separator">${item[0].meanings[0].partOfSpeech}</div>
+  <span class="meaning">Meaning</span>
+  
+   
+  <ul>${item[0]?.meanings[0].definitions[0].map(function (definition, index) {
+    return <li>{definition[index]}</li>;
+  })}}
+
+  <div class="synonym-text">
+    <span class="meaning">Synonyms</span>
+    <span class="synonym">electronic keyboard</span>
+  </div>
+   
+    `;
+  partsOfSpeech.innerHTML = nounHTML;
+}
+
+app.innerHTML =
+  "<ul>" +
+  wizards
+    .map(function (wizard) {
+      return "<li>" + wizard + "</li>";
+    })
+    .join("") +
+  "</ul>";
 
 function createErrorMessage(message) {
   const sectionHTML = `
