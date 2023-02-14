@@ -391,7 +391,7 @@ input:checked + .slider::before {
 }
 
 .source-section {
-  margin-top: 0.7rem;
+  margin: 0.7rem 0 2rem 0;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -422,4 +422,17 @@ input:checked + .slider::before {
   font-size: 1rem;
   margin-left: 20px;
   color: var(--font-color);
+}
+
+@media only screen and (max-width: 768px) {
+  .input-group .form-control {
+    width: 235px;
+  }
+}
+@media only screen and (max-width: 999px) {
+  .app {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
 }/*# sourceMappingURL=main.css.map */
