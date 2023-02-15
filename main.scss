@@ -460,8 +460,12 @@ input:checked + .slider::before {
 
 @media only screen and (max-width: 999px) {
   .app {
-    margin-left: 0;
-    margin-right: 0;
+    margin: 1rem;
     width: 100%;
+
+    .top-app {
+      margin-top: 0;
+      align-items: flex-end;
+    }
   }
 }
