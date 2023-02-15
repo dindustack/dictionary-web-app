@@ -233,9 +233,10 @@ input:checked + .slider::before {
   width: 100%;
 }
 
-.input-group .form-control {
+.input-group input[type="text"] {
   display: block;
-  width: 1000px;
+  width: 100%;
+  resize: vertical;
   padding: 12px 20px;
   font-size: 1.2rem;
   font-weight: 700;
@@ -450,22 +451,23 @@ input:checked + .slider::before {
   }
 }
 
-// Responsive - mobile
-
-@media only screen and (max-width: 768px) {
-  .input-group .form-control {
-    width: 235px;
-  }
-}
-
 @media only screen and (max-width: 999px) {
   .app {
     margin: 1rem;
     width: 100%;
+    overflow-x: hidden;
 
     .top-app {
       margin-top: 0;
       align-items: flex-end;
     }
+  }
+
+  .dropdown {
+    min-width: 90px;
+  }
+
+  .source-section .source-link {
+    word-break: break-all;
   }
 }
