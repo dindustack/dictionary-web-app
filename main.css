@@ -373,7 +373,7 @@ input:checked + .slider::before {
 .noun-section .synonym {
   font-size: 1rem;
   margin-left: 20px;
-  color: var(--primary-color);
+  color: #a145e8;
 }
 .noun-section ul {
   list-style: none;
@@ -436,7 +436,7 @@ input:checked + .slider::before {
     align-items: flex-end;
   }
   .dropdown {
-    min-width: 90px;
+    min-width: 100px;
   }
   .source-section .source-link {
     word-break: break-all;

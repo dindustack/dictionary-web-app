@@ -390,7 +390,7 @@ input:checked + .slider::before {
   .synonym {
     font-size: 1rem;
     margin-left: 20px;
-    color: var(--primary-color);
+    color: #a145e8;
   }
 
   ul {
@@ -464,7 +464,7 @@ input:checked + .slider::before {
   }
 
   .dropdown {
-    min-width: 90px;
+    min-width: 100px;
   }
 
   .source-section .source-link {
